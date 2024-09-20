@@ -12,6 +12,7 @@ mongock:
   migration-scan-package:
     - io.andrelucas.vechicleroutemanager.migrations
   mongo-db:
+    # I need to understand why this is necessary
     write-concern:
       w: majority
       w-timeout-ms: 1000

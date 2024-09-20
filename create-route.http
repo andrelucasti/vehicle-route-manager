@@ -1,0 +1,23 @@
+POST http://localhost:8181/route
+Content-Type: application/json
+
+{
+    "id": "123e4567-e89b-12d3-a456-426614174000",
+    "stops": [
+        {
+        "latitude": -23.11,
+        "longitude": -46.333
+        },
+        {
+        "latitude": -23.222,
+        "longitude": -46.6331113094
+        },
+      {
+        "latitude": -23.222,
+        "longitude": -46.6331113094
+      }
+    ]
+}
+
+###
+GET http://localhost:8181/route
