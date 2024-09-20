@@ -2,35 +2,26 @@ package io.andrelucas.vechicleroutemanager;
 
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/route")
 public class RouteController {
 
-    private final RouteRepository routeRepository;
+    private final CreateRoute createRoute;
 
-    public RouteController(RouteRepository routeRepository) {
-        this.routeRepository = routeRepository;
+    public RouteController(final CreateRoute createRoute) {
+        this.createRoute = createRoute;
     }
 
-
-    public record RouteRequest(List<Geolocation> stops) {}
     @PostMapping
     public ResponseEntity<Route> createRoute(@RequestBody RouteRequest request) {
 
-        Route route = new Route();
-        route.setStops(request.stops());
+        createRoute.execute(request);
 
-        Route save = routeRepository.save(route);
-
-        return ResponseEntity.ok(save);
-    }
-
-    @GetMapping
-    public ResponseEntity<List<Route>> getRoute() {
-        return ResponseEntity.ok(routeRepository.findAll());
+        return ResponseEntity.ok().build();
     }
 }

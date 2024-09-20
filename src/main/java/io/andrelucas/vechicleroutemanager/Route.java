@@ -1,6 +1,8 @@
 package io.andrelucas.vechicleroutemanager;
 
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -15,14 +17,30 @@ public class Route {
     private String id;
 
     @Field
-    private List<Geolocation> stops;
+    private String name;
 
+    @Field
+    private List<String> stops;
 
-    public List<Geolocation> getStops() {
+    @CreatedDate
+    private LocalDateTime createdAt;
+
+    @LastModifiedDate
+    private LocalDateTime updatedAt;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<String> getStops() {
         return stops;
     }
 
-    public void setStops(List<Geolocation> stops) {
+    public void setStops(List<String> stops) {
         this.stops = stops;
     }
 }

@@ -2,10 +2,12 @@ package io.andrelucas.vechicleroutemanager;
 
 import io.mongock.runner.springboot.EnableMongock;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.mongodb.config.EnableMongoAuditing;
 
 
 @Configuration
 @EnableMongock
+@EnableMongoAuditing
 public class MongoConfiguration {
 
 //    @Bean // Replicas configuration
