@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: vechicle-route-manager
+  # MongoDB configuration
+  data:
+    mongodb:
+      uri: mongodb://route-manager:route-manager@localhost:27017
+      database: route-manager
+
+
+mongock:
+  migration-scan-package:
+    - io.andrelucas.vechicleroutemanager.migrations
+  mongo-db:
+    write-concern:
+      w: majority
+      w-timeout-ms: 1000
+      journal: true
+    read-concern: majority
+    read-preference: primary
+server:
+  port: 8181
