@@ -1,4 +1,4 @@
-package io.andrelucas.vechicleroutemanager;
+package io.andrelucas.vechicleroutemanager.route;
 
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,7 @@ public class CreateRoute {
         var route = new Route();
         route.setStops(request.stops());
         route.setName(request.name());
+        route.setVehicleId(request.vehicleId().toString());
 
         routeRepository.save(route);
     }

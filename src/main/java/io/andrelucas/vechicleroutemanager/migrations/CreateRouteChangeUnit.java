@@ -1,6 +1,6 @@
 package io.andrelucas.vechicleroutemanager.migrations;
 
-import io.andrelucas.vechicleroutemanager.Route;
+import io.andrelucas.vechicleroutemanager.route.Route;
 import io.mongock.api.annotations.ChangeUnit;
 import io.mongock.api.annotations.Execution;
 import io.mongock.api.annotations.RollbackExecution;

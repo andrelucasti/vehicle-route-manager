@@ -1,4 +1,4 @@
-package io.andrelucas.vechicleroutemanager;
+package io.andrelucas.vechicleroutemanager.route;
 
 
 import org.springframework.http.ResponseEntity;

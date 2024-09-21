@@ -1,23 +1,26 @@
+###
 POST http://localhost:8181/route
 Content-Type: application/json
 
 {
-    "id": "123e4567-e89b-12d3-a456-426614174000",
-    "stops": [
-        {
-        "latitude": -23.11,
-        "longitude": -46.333
-        },
-        {
-        "latitude": -23.222,
-        "longitude": -46.6331113094
-        },
-      {
-        "latitude": -23.222,
-        "longitude": -46.6331113094
+  "name": "Restauradores",
+  "stops": [
+    {
+      "name": "Benfica",
+      "sequence": 1,
+      "coordinate": {
+        "latitude": 38.746381,
+        "longitude": -9.190099
       }
-    ]
+    },
+    {
+      "name": "Rossio",
+      "sequence": 2,
+      "coordinate": {
+        "latitude": 38.714249,
+        "longitude": -9.139337
+      }
+    }
+  ],
+  "vehicleId": "0b7be231-dd72-43f5-9a13-0efb346280eb"
 }
-
-###
-GET http://localhost:8181/route
