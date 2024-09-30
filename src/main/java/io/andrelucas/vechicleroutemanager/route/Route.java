@@ -1,6 +1,5 @@
 package io.andrelucas.vechicleroutemanager.route;
 
-import io.andrelucas.vechicleroutemanager.vehicle.stop.Station;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -9,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @Document
 public class Route {
@@ -18,13 +18,16 @@ public class Route {
     private String id;
 
     @Field
+    private String externalId;
+
+    @Field
     private String name;
 
     @Field
     private String vehicleId;
 
     @Field
-    private List<Station> stations;
+    private List<StationSequence> stations;
 
     @CreatedDate
     private LocalDateTime createdAt;
@@ -32,27 +35,33 @@ public class Route {
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
-    public String getName() {
-        return name;
+    public Route(final String name,
+                 final List<StationSequence> stations,
+                 final UUID vehicleId) {
+
+        this.externalId = UUID.randomUUID().toString();
+        this.name = name;
+        this.vehicleId = vehicleId.toString();
+        this.stations = stations;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getId() {
+        return id;
+    }
+
+    public String getExternalId() {
+        return externalId;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getVehicleId() {
         return vehicleId;
     }
 
-    public void setVehicleId(String vehicleId) {
-        this.vehicleId = vehicleId;
-    }
-
-    public List<Station> getStops() {
+    public List<StationSequence> getStations() {
         return stations;
-    }
-
-    public void setStops(List<Station> stations) {
-        this.stations = stations;
     }
 }

@@ -3,24 +3,24 @@ POST http://localhost:8181/route
 Content-Type: application/json
 
 {
-  "name": "Restauradores",
+  "name": "North - South",
   "stations": [
     {
-      "name": "Benfica",
-      "sequence": 1,
-      "coordinate": {
-        "latitude": 38.746381,
-        "longitude": -9.190099
-      }
+      "stationId": "11d86f32-5fd7-4fcd-8bf6-6adf114f119b",
+      "sequence": 1
     },
     {
-      "name": "Rossio",
-      "sequence": 2,
-      "coordinate": {
-        "latitude": 38.714249,
-        "longitude": -9.139337
-      }
+      "stationId": "0ff09480-aca9-4dac-8a75-4ce44637e12f",
+      "sequence": 3
+    },
+    {
+      "stationId": "11d86f32-5fd7-4fcd-8bf6-6adf114f119b",
+      "sequence": 2
+    },
+    {
+      "stationId": "77a6902c-daa4-4164-8d18-bd7ae62b7f07",
+      "sequence": 4
     }
   ],
-  "vehicleId": "0b7be231-dd72-43f5-9a13-0efb346280eb"
+  "vehicleId": "f8afa61e-bb75-4539-a531-0102278bd452"
 }
