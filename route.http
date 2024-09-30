@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
   "name": "Restauradores",
-  "stops": [
+  "stations": [
     {
       "name": "Benfica",
       "sequence": 1,

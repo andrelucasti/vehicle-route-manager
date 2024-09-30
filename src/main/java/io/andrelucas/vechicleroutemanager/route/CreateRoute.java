@@ -13,10 +13,11 @@ public class CreateRoute {
 
     public void execute(final RouteRequest request){
         var route = new Route();
-        route.setStops(request.stops());
+        route.setStops(request.stations());
         route.setName(request.name());
         route.setVehicleId(request.vehicleId().toString());
 
         routeRepository.save(route);
+
     }
 }

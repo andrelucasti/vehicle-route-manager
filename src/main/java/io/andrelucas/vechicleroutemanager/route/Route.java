@@ -1,6 +1,6 @@
 package io.andrelucas.vechicleroutemanager.route;
 
-import io.andrelucas.vechicleroutemanager.vehicle.stop.Stop;
+import io.andrelucas.vechicleroutemanager.vehicle.stop.Station;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -24,7 +24,7 @@ public class Route {
     private String vehicleId;
 
     @Field
-    private List<Stop> stops;
+    private List<Station> stations;
 
     @CreatedDate
     private LocalDateTime createdAt;
@@ -48,11 +48,11 @@ public class Route {
         this.vehicleId = vehicleId;
     }
 
-    public List<Stop> getStops() {
-        return stops;
+    public List<Station> getStops() {
+        return stations;
     }
 
-    public void setStops(List<Stop> stops) {
-        this.stops = stops;
+    public void setStops(List<Station> stations) {
+        this.stations = stations;
     }
 }

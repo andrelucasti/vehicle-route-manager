@@ -7,6 +7,28 @@ spring:
       uri: mongodb://route-manager:route-manager@localhost:27017
       database: route-manager
 
+  cloud:
+    function:
+      definition: station-consumer
+    stream:
+      binders:
+        #This section of the configuration tells the solace binder how to connect to the solace event broker/mesh
+        solace:
+          type: solace
+          environment:
+            solace:
+              java:
+                host: tcps://mr-connection-439ua9o6bd8.messaging.solace.cloud:55443
+                msgVpn: demo
+                clientUsername: solace-cloud-client
+                clientPassword: frtmgtfl5bmpqpit652pamjspr
+                connectRetries: 3
+                connectRetriesPerHost: 0
+                reconnectRetries: 3
+      bindings:
+        station-consumer-in-0:
+          destination: stations
+          content-type: application/json
 
 mongock:
   migration-scan-package:
